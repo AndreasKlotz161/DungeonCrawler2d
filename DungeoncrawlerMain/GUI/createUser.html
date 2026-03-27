@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE USER</title>
+</head>
+<body>
+    <h2>Create a new User</h2>
+    <form action="http://127.0.0.1:3000/createUser" method="get">
+        <label for="name">Username</label>
+        <input id="name" name="name" type="text" placeholder="Enter new Username">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+        <input id="isNoAdmin" name="isAdmin" type="radio" value="0" checked><label for="isNoAdmin">create User</label>
+        <input id="isAdmin" name="isAdmin" type="radio" value="1"><label for="isAdmin">create Admin-User</label>
+        <input type="submit">
+    </form>
+</body>
+</html>

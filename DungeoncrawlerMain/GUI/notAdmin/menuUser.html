@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU - %USERNAME%</title>
+</head>
+<body>
+    <form action="startGame">
+        <select name="character" id="character" aria-placeholder="Select Character">
+            <!-- <option value="0">character 0</option> -->
+            %CHARACTERS%
+        </select>
+        <button action="deleteCharacter">Delete Character</button><br>
+        <input type="submit" value="Start">
+    </form>
+    <a href="http://127.0.0.1:3000/logout"><button>Logout</button></a>
+    <a href="http://127.0.0.1:3000/createCharacter.html"><button>New Character</button></a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE MAP</title>
+</head>
+<body>
+    <div id="mapData" style="display: none;">%MAP%</div>
+    <div id="map"></div>
+    <div id="enemySelector">
+        <select name="enemy" id="enemy">
+            <option value="0">Enemyname0</option>
+            <option value="1">Enemyname1</option>
+            <option value="2">Enemyname2</option>
+        </select>
+    </div>
+    <div id="startStop"></div>
+    <form action="/createMap" method="post">
+        <label for="name">Mapname</label>
+        <input type="text" name="name" id="name">
+        <input type="text" name="mapData" id="mapData" style="display: none;">
+        <input type="submit" id="submit" value="create Map">
+    </form>
+    <br>
+    <a href="/"><button>mack to benu</button></a>
+
+    <script src="../../functions/game/displayGameStuff.js"></script>
+</body>
+</html>
