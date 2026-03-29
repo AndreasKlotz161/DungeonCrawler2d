@@ -38,8 +38,8 @@ function packMapData(){
     return rawData
 }
 
-let mapFields = getMapData();
-let mapData = { "mapFields": packMapData(), 
+var mapFields = getMapData();
+var mapData = { "mapFields": packMapData(), 
                 "mapName": "",
                 "mapStartX": null,
                 "mapStartY": null,
@@ -62,7 +62,7 @@ function drawMap(mapData){
 
 function addEnemy(x,y){
     mapData.enemies.push({"x": x,"y":y, "enemyId": parseInt(document.getElementById("enemy").value)});
-    console.log(mapData.enemies);
+    // console.log(mapData.enemies);
 }
 
 
@@ -74,18 +74,23 @@ function detectMouse(){
     let canvas = document.getElementById("canvasMap");
     
     document.getElementById("submit").onmouseenter = () =>{
-        document.getElementById("mapData").innerText = JSON.stringify(mapData);
+        document.getElementById("mapDataSend").value = JSON.stringify(mapData);
+        // console.log(document.getElementById("mapDataSend").value);
     }
 
-    document.getElementById("name").oninput = () =>{
-        mapData.mapName = document.getElementById("name").textContent;
-    }
+    document.getElementById("name").addEventListener("input", () =>{
+        mapData.mapName = document.getElementById("name").value;
+    });
 
     canvas.onmousemove = mouse =>{
         x_coord = parseInt(mouse.offsetX / 64);
         y_coord = parseInt(mouse.offsetY / 64);
         drawCursor(x_coord, y_coord);
     };
+
+    canvas.onmouseout = () =>{
+        drawFieldsOnCanvas();
+    }
 
     canvas.onclick = () =>{
         switch(elementSelector){
@@ -158,3 +163,5 @@ drawMap(mapFields);
 detectMouse();
 // var rawData = document.getElementById("mapData").textContent;
 // console.log(rawData);
+
+// exports = {getMapData, drawFieldOnCanvas, drawFieldsOnCanvas};

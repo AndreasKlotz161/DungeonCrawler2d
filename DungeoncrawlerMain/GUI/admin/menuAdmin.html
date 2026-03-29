@@ -6,10 +6,14 @@
     <title>ADMIN-MENU - %USERNAME%</title>
 </head>
 <body>
-    <a href="/createMap.html"><button>New Map</button></a>
-    <button>New Enemy</button>
-    <button>Delete Map</button>
-    <button>New Item</button>
+    <form action="/createMap.html" method="get">
+        <label for="mapSize"></label>
+        <input type="number" name="mapSize" id="mapSize" placeholder="Enter the Size">
+        <input type="submit" value="generate Map">
+    </form>
+    <a href="/newEnemy.html"><button>New Enemy</button></a>
+    <!-- <button>Delete Map</button>
+    <button>New Item</button> -->
     <a href="http://127.0.0.1:3000/logout"><button>Logout</button></a>
 </body>
 </html>

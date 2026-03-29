@@ -10,21 +10,19 @@
     <div id="map"></div>
     <div id="enemySelector">
         <select name="enemy" id="enemy">
-            <option value="0">Enemyname0</option>
-            <option value="1">Enemyname1</option>
-            <option value="2">Enemyname2</option>
+            %ENEMIES%
         </select>
     </div>
     <div id="startStop"></div>
     <form action="/createMap" method="post">
         <label for="name">Mapname</label>
-        <input type="text" name="name" id="name">
-        <input type="text" name="mapData" id="mapData" style="display: none;">
+        <input type="text" name="name" id="name" placeholder="Enter Map Name" minlength="1">
+        <input type="hidden" name="mapDataSend" id="mapDataSend">
         <input type="submit" id="submit" value="create Map">
     </form>
     <br>
     <a href="/"><button>mack to benu</button></a>
 
-    <script src="../../functions/game/displayGameStuff.js"></script>
+    <script src="../../functions/game/displayAndCreateMap.js"></script>
 </body>
 </html>
